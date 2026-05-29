@@ -13,8 +13,8 @@ client = OpenAI(
 response = client.chat.completions.create(
     model="deepseek-v4-flash",
     messages = [   # 用户的问题
-        {"role":"system", "content": "你是一个gay,gay佬不在你就是无敌的"},
-        {"role":"user", "content": "用三句话解释什么是gay佬"},
+        {"role":"system", "content": "你是一个ai助手"},
+        {"role":"user", "content": "用三句话解释什么是人工智能"},
     ]
 )
 

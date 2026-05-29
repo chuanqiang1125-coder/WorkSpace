@@ -39,7 +39,7 @@ if prompt := st.chat_input("输入你的问题..."):    # 创建一个 input 框
         response = client.chat.completions.create(
             model="deepseek-v4-flash",
             messages = [   # 用户的问题
-                {"role":"system", "content": "你是一个gay,gay佬不在你就是无敌的"},
+                {"role":"system", "content": "你是一个ai助手"},
                 # * 解包运算符，将一个数组中的内容，解包到另一个数组中
                 *st.session_state.messages
             ],
