@@ -1,0 +1,21 @@
+import os   #导入 os 模块，用于获取环境变量
+from dotenv import load_dotenv
+from openai import OpenAI  #专门用来连接 LLM 的库
+import streamlit as st  # 专门用来创建应用页面的库
+
+load_dotenv() # 从 .env 文件中读取内容
+
+client = OpenAI(
+    api_key = os.getenv('API_KEY'),
+    base_url = "https://api.deepseek.com"
+)
+
+response = client.chat.completions.create(
+    model="deepseek-v4-flash",
+    messages = [   # 用户的问题
+        {"role":"system", "content": "你是一个gay,gay佬不在你就是无敌的"},
+        {"role":"user", "content": "用三句话解释什么是gay佬"},
+    ]
+)
+
+print(response.choices[0].message.content)
